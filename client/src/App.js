@@ -3,15 +3,15 @@ import Main from "./pages/Main";
 import {Route} from 'react-router-dom';
 import styled, {css} from 'styled-components';
 import night from './background/night.png';
-import morning from './background/morning.png';
+import daytime from './background/daytime.png';
 
 const ContainerBlock = styled.div` 
-    ${props => props.hour > 18 && props.hour < 7 ?      //7시부터 18시까지는 아침, 19시부터 7시까지 밤으로 배경 설정
+    ${props => props.time > 6 && props.time < 19 ?      //7시부터 18시까지는 주간, 19시부터 6시까지 밤으로 배경 설정
     css `
-        background-image: url(${night});
+        background-image: url(${daytime});
     ` :
     css `
-        background-image: url(${morning});
+        background-image: url(${night});
     `}
     background-size: cover;
 `;
@@ -25,7 +25,7 @@ const App = () => {
     };
 
     return (
-        <ContainerBlock {...getTime()}>     //현재 시간을 props로 받음
+        <ContainerBlock time={getTime()}>
             <Route component={Main} path='/' exact/>
         </ContainerBlock>
     );
