@@ -1,6 +1,7 @@
 import React from "react";
 
 const WeatherIconSwitch = (weather) => {
+    //현재 날씨 정보를 받아 아이콘을 반환
     switch (weather) {
         case 'Thunderstorm':
             return <i className="wi wi-owm-200"></i>

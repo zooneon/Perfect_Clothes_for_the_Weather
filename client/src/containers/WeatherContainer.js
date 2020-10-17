@@ -10,6 +10,7 @@ const WeatherContainer = () => {
         clothesData: weather.clothesData,
         error: weather.error
     }));
+    //기본 위치 설정
     const defaultLatitude = 37.58;
     const defaultLongitude = 127;
 
