@@ -9,8 +9,7 @@ import {Provider} from "react-redux";
 import rootReducer, {rootSaga} from "./modules";
 import {composeWithDevTools} from "redux-devtools-extension";
 import createSagaMiddleware from 'redux-saga';
-import '../src/weather-icons-master/css/weather-icons.min.css';
-import 'bootstrap/dist/css/bootstrap.css';
+import './Assets/weather-icons-master/css/weather-icons.min.css';
 
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(sagaMiddleware)));
