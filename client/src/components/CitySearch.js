@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import {useDispatch} from "react-redux";
 import styled from 'styled-components';
 import CityList from "../Assets/CityList";
+import Modal from "./common/Modal";
 
 const CitySearchBlock = styled.div`
     display: flex;
@@ -10,7 +11,7 @@ const CitySearchBlock = styled.div`
     justify-content: center;
 `;
 
-const StyledInput = styled.input `
+const StyledInput = styled.input`
     border: none;
     outline: none;
     width: 250px;
@@ -20,7 +21,7 @@ const StyledInput = styled.input `
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); 
 `;
 
-const StyledButton = styled.button `
+const StyledButton = styled.button`
     background: #686d76;
     outline: none;
     border: none;
@@ -39,6 +40,7 @@ const StyledButton = styled.button `
 const CitySearch = () => {
     const dispatch = useDispatch();
     const [city, setCity] = useState('');
+    const [modal, setModal] = useState(false);
 
     const searchCity = city => {
         //입력 받은 도시를 CityList에서 찾아 도시 정보 반환
@@ -56,8 +58,7 @@ const CitySearch = () => {
         if (!cityInfo) {
             //CityList에 해당하는 도시가 없을 경우
             //alert 대신 모달 추가 예정
-            alert('도시 정보를 찾을 수 없습니다. 다시 검색해주세요.');
-            setCity('');
+            setModal(true);
             return;
         }
         console.log(cityInfo.latitude, cityInfo.longitude)
@@ -66,17 +67,25 @@ const CitySearch = () => {
         setCity('');
     };
 
+    const onConfirm = () => {
+        setCity('');
+        setModal(false);
+    };
+
     return (
-        <CitySearchBlock>
-            <form onSubmit={onSubmit}>
-                <StyledInput
-                    placeholder="도시를 검색하세요. ex) 서울, Seoul"
-                    onChange={onChange}
-                    value={city}
-                />
-                <StyledButton type='submit'>검색</StyledButton>
-            </form>
-        </CitySearchBlock>
+        <>
+            <CitySearchBlock>
+                <form onSubmit={onSubmit}>
+                    <StyledInput
+                        placeholder="도시를 검색하세요. ex) 서울, Seoul"
+                        onChange={onChange}
+                        value={city}
+                    />
+                    <StyledButton type='submit'>검색</StyledButton>
+                </form>
+            </CitySearchBlock>
+            <Modal visible={modal} onConfirm={onConfirm} title="검색 실패" description="도시 정보를 찾을 수 없습니다. 다시 검색해주세요."/>
+        </>
     );
 
 };
