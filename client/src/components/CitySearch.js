@@ -57,7 +57,6 @@ const CitySearch = () => {
         const cityInfo = searchCity(city);
         if (!cityInfo) {
             //CityList에 해당하는 도시가 없을 경우
-            //alert 대신 모달 추가 예정
             setModal(true);
             return;
         }

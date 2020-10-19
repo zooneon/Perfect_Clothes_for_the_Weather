@@ -19,7 +19,7 @@ const Box = styled.div `
     padding: 2rem;
     background: white;
     border-radius: 4px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
     h2 {
         margin-top: 0;
         margin-bottom: 0.5rem;
@@ -40,6 +40,8 @@ const Box = styled.div `
         display: flex;
         justify-content: center;
         width: 100%;
+        cursor: pointer;
+        }
     }            
 `;
 
