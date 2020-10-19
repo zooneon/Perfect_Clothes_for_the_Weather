@@ -20,12 +20,12 @@
  *    "Font Awesome by Dave Gandy - http://fontawesome.io"
  */
 
-@import 'weather-icons-core';
-@import 'weather-icons-variables';
-@import 'weather-icons-classes';
+@import 'weather-icons-core.scss';
+@import 'weather-icons-variables.scss';
+@import 'weather-icons-classes.scss';
 // Mappings to various APIs
-@import "sass/mappings/wi-yahoo";
-@import "sass/mappings/wi-forecast-io";
-@import "sass/mappings/wi-wmo4680";
-@import "sass/mappings/wi-owm";
-@import "sass/mappings/wi-wunderground";
+@import "mappings/wi-yahoo.scss";
+@import "mappings/wi-forecast-io.scss";
+@import "mappings/wi-wmo4680.scss";
+@import "mappings/wi-owm.scss";
+@import "mappings/wi-wunderground.scss";
