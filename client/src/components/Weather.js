@@ -1,6 +1,7 @@
 import React from "react";
 import styled from 'styled-components';
 import WeatherIconSwitch from "../lib/WeatherIconSwitch";
+import {getDate} from "../lib/GetDateTime";
 
 const ContainerBlock = styled.div `
     display: flex;
@@ -36,11 +37,12 @@ const Weather = (/*{weatherData, error}*/) => {
         //모달 추가 해야함
         return <div>에러 발생!</div>
     }*/
+    const {year, month, date, day} = getDate();
 
     return(
         <ContainerBlock>
             <DateBlock>
-                date
+                <h2>{year}년 {month}월 {date}일 {day} </h2>
             </DateBlock>
             <WeatherBlock>
                 weather
