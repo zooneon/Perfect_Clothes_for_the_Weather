@@ -20,8 +20,12 @@ const DateBlock = styled.div `
     width: 500px;
     height: 50px;
     margin-bottom: 20px;
+    display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1.125rem;
+    color: #373a40;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1)
 `;
 
 const WeatherBlock = styled.div `
@@ -30,6 +34,7 @@ const WeatherBlock = styled.div `
     border: none;
     width: 500px;
     height: 200px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1)
 `;
 
 const Weather = (/*{weatherData, error}*/) => {
