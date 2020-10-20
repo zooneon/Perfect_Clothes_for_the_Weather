@@ -6,7 +6,6 @@ import Modal from "./common/Modal";
 
 const CitySearchBlock = styled.div`
     display: flex;
-    margin-bottom: 100px;
     align-items: center;
     justify-content: center;
 `;
