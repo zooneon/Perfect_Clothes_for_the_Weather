@@ -34,7 +34,7 @@ const WeatherIconSwitch = (weather) => {
         case 'Clouds':
             return <i className="wi wi-owm-804"></i>
         default:
-            return <div>아이콘을 불러올 수 없습니다.</div>
+            return <div>error</div>
     }
 };
 
