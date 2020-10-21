@@ -48,7 +48,7 @@ const Box = styled.div `
 const Modal = ({visible, title, description, onConfirm}) => {
     if(!visible) return null;
     return (
-        <Background>
+        <Background onClick={onConfirm}>
             <Box>
                 <h2>{title}</h2>
                 <p>{description}</p>
